@@ -1,0 +1,4 @@
+numpy==1.22.3
+pandas==1.4.2
+fastapi[all]==0.75.1
+pyarrow==5.0.0

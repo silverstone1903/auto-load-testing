@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  locust:
+    image: locustio/locust:latest
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locust/:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --headless -u 50 -r 2 --run-time 10s --host http://fastapi:8000
+    depends_on:
+      - fastapi
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/" ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      net:
+
+  fastapi:
+    build:
+      context: ./
+      dockerfile: ./app/Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      net:
+    container_name: fastapi_container
+
+networks:
+  net:
+    driver: bridge
