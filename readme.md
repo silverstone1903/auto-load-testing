@@ -96,8 +96,8 @@ Blog post (in Turkish): [Auto Load Testing - FastAPI + locust](https://silversto
 ## Locust Results
 <p align="center">
   <img src="assets/locust-gif.gif" >
-  <img src="assets/locust-1.jpg" > 
-  <img src="assets/locust-2.jpg" >
+  <img src="assets/locust-1.JPG" > 
+  <img src="assets/locust-2.JPG" >
   <!-- <img src="assets/locust-3.jpg" > -->
 </p>
 
